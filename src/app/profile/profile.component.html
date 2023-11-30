@@ -1,0 +1,99 @@
+<section style="background-color: #9de2ff;">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+       <a class="navbar-brand bariflo-logo" href="">
+         <img src="./assets/img/Asset2.png" alt="logo" class="d-inline-block" width="62px" height="62px">
+       </a>
+       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+       </button>
+       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <button type="button" class="btn btn-primary mx-2" (click)="editdata()">Edit</button>
+              </li>
+              <li>
+                <a href="login" style="color: red;text-decoration: none;">logout</a>
+              </li>
+            </ul>
+       </div>
+      </div>
+   </nav>
+   <div class="container py-5 mt-5">
+     <div class="row">
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="row">
+          <div class="card">
+            <div class="card-body text-center">
+              <img src='http://3.25.133.235/{{employeedata.profileimg}}' alt="avtar" class="rounded-circle img-fluid" style="width: 150px;height: 150px ;">
+              <h3 class="my-3">{{employeedata.firstname}} {{employeedata.lastname}}</h3>
+              <p>{{ employeedata.designation }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8 col-md-12 col-sm-12">
+        <div class="row">
+          <div class="card ">
+            <div class="card-body">
+               <div class="row">
+                 <div class="col-sm-3">
+                   <p>Full Name</p>
+                 </div>
+                 <div class="col-sm-9">
+                   <p class="text-muted mb-0">{{employeedata.firstname}}  {{employeedata.lastname}}</p>
+                 </div>
+                 
+               </div>
+               <hr>
+               <div class="row">
+                   <div class="col-sm-3" >
+                     <p>Email</p>
+                   </div>
+                   <div class="col-sm-9">
+                     <p class="text-muted mb-0">{{employeedata.email}}</p>
+                   </div>
+               </div>
+               <hr>
+               <div class="row">
+                  <div class="col-sm-3">
+                     <p>Phone No</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{employeedata.phone}}</p>
+                  </div>
+               </div>
+               <hr>
+               <div class="row">
+                  <div class="col-sm-3">
+                    <p>Address</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{employeedata.address}}</p>
+                  </div>
+               </div>
+               <hr>
+               <div class="row">
+                <div class="col-sm-3">
+                  <p>Gender</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{employeedata.gender}}</p>
+                </div>
+             </div>
+             <hr>
+             <div class="row">
+              <div class="col-sm-3">
+                <p>Date of Birth</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{employeedata.Dob}}</p>
+              </div>
+           </div>
+            </div>
+           </div>
+        </div>
+      </div>
+     </div>
+   </div>
+  </section>

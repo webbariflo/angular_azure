@@ -1,0 +1,51 @@
+<head>
+    <style>
+      video::-webkit-media-controls {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <section class="vh-100">
+    <div class="container-fluid">
+     <div class="row">
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="mx-5 mt-1 pt-3 pl-5 " >
+        
+          <img src="./assets/img/Asset2.png" alt="logo" width="60px" height="60px" class=" mx-4 mb-0">
+        
+       </div>
+       <div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
+        <form style="width:40rem;" [formGroup]="loginForm" >
+          <h3 class="h1 fw-bold mb-2 pb-3 d-flex justify-content-center" style="letter-spacing:1px;">Log in</h3>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="form2">Email</label>
+            <input type="email"  id="form2" class="form-control form-control-lg" formControlName="email"/>
+            <span style="color: red;" *ngIf="email && email.hasError('Required') && email.touched"><small>This is a required Field</small></span>
+            <span style="color: red;" *ngIf="email && email.hasError('email') "><small>The email You entered is not valid</small></span>
+          </div>
+          <div class="form-outline mb-3">
+            <label class="form-label" for="form2">Password</label>
+            <input type="password"  id="form2" class="form-control form-control-lg" formControlName="password"/>
+            <span style="color: red;" *ngIf="pas && pas.invalid && pas.touched"><small>Required Field</small></span>
+          </div>
+          
+         
+          <div class="d-flex justify-content-end pt-1 mb-3">
+            <button class="btn btn-info btn-lg btn-block" type="button" [disabled]="loginForm.invalid" (click)="authentication()">Login</button>
+          </div>
+         
+          <p>Don't have an account? <a href="register" class="link-info">Register here</a></p>
+        </form>
+       </div>
+      </div >
+      <div class="col-lg-6 col-md-12 col-sm-12">
+          <div class="col-sm-6 px-0 d-none d-sm-block " >
+            <video [muted]="true" autoplay playsinline loop style="width: 600px; height:600px" clas="ml-5">
+              <source src="./assets/img/logovideo.mp4" type="video/mp4">
+             </video>
+          </div>
+      </div>
+     </div>
+     
+    </div>
+  </section>

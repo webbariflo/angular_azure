@@ -1,0 +1,28 @@
+name: Deploy to Azure VMWare
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install Angular CLI
+        run: npm install -g @angular/cli
+
+      - name: Install app dependencies
+        run: npm install
+
+      - name: Build Angular app
+        run: npm start

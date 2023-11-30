@@ -1,0 +1,63 @@
+<head>
+    <style>
+      video::-webkit-media-controls {
+        display: none !important;
+      }
+    </style>
+  </head>
+  <section class="vh-100">
+   <div class="container h-100">
+    <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-lg-6 col-12 col-sm-12">
+          <div class="d-flex justify-content-start align-items-center mt-5" >
+             <img src="./assets/img/Asset2.png" alt="logo" width="60px" height="60px" class=" mx-4 mb-0">
+          </div>
+          <div class="row">
+            <div class="d-flex align-items-center justify-content-center mt-0">
+              <p class="h1 fw-bold mb-3 mx-1">Sign Up</p>
+            </div>
+          </div>
+          <div class="col-12 mb-0">
+            <form [formGroup]="myForm">
+               <div class="mb-3">
+                <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                <label type="form-label" for="form3">Enter First Name</label>
+                <input type="text"  id="form2" class="form-control form-control-lg" formControlName="FirstName" />
+                <span style="color: red;" *ngIf="First && First.invalid && First.touched"><small>This is Required</small></span>
+               </div>
+               <div class="mb-3">
+                <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+                <label type="form-label" for="form3">Enter Last Name</label>
+                <input type="text"  id="form2" class="form-control form-control-lg" formControlName="LastName"/>
+                <span style="color: red;" *ngIf="Last && Last.invalid && Last.touched"><small>This is Required</small></span>
+               </div>
+               <div class="mb-3">
+                <i class="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                <label type="form-label" for="form3">Enter Email Id</label>
+                <input type="text"  id="form2" class="form-control form-control-lg" formControlName="email"/>
+                <span style="color: red;" *ngIf="email && email.hasError('Required') && email.touched">Enter a valid email</span>
+                <span style="color: red;" *ngIf="email && email.hasError('email') "><small>Entered Email is not a valid Email</small></span>
+               </div>
+               <div class="mb-3">
+                <i class="fa-solid fa-square-phone fa-lg me-3 fa-fw"></i>
+                <label type="form-label" for="form3">Enter Mobile No</label>
+                <input type="tel"  id="form2" class="form-control form-control-lg" formControlName="Mobno" pattern="[0-9]{10}"/>
+                <span style="color: red;" *ngIf="Mob && Mob.invalid && Mob.touched"><small>Enter a valid Mobile Number</small></span>
+               </div>
+               <div class="d-flex justify-content-end mx-4 mb-3 mb-lg-4">
+                <button type="submit" class="btn btn-primary btn-lg" [disabled]="myForm.invalid" (click)="submitForm()">Register</button>
+               </div>
+              <p>Got an Username and Password? <a href="login" class="link-info">Sign in instead</a></p>
+            </form>
+          </div>
+       </div>
+       <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="col-sm-6 px-0 d-none d-sm-block " >
+          <video [muted]="true" autoplay playsinline loop style="width: 600px; height:600px" clas="ml-5">
+            <source src="./assets/img/logovideo.mp4" type="video/mp4">
+           </video>
+        </div>
+       </div>
+    </div>
+   </div>
+  </section>
